@@ -2,7 +2,7 @@ module "iam_role_dns_zone_manager" {
   count = var.create_dns_zone_manager_role ? 1 : 0
 
   source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
-  version = "5.17.0"
+  version = "5.48.0"
 
   create_role             = true
   role_name               = "wf-DNSZoneManager${local.resource_suffix}"
@@ -16,7 +16,7 @@ module "iam_policy_dns_zone_manager" {
   count = var.create_dns_zone_manager_role ? 1 : 0
 
   source  = "terraform-aws-modules/iam/aws//modules/iam-policy"
-  version = "5.17.0"
+  version = "5.48.0"
 
   name        = "wf-DNSZoneManager${local.resource_suffix}"
   description = "Create and manage Route 53 DNS Zones for automated DNS management"
